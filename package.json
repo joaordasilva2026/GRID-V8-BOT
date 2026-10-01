@@ -1,0 +1,15 @@
+{
+  "name": "grid-v8.2-validation-engine",
+  "version": "8.2.0",
+  "private": true,
+  "type": "module",
+  "engines": {"node": ">=20"},
+  "scripts": {
+    "test": "node --test",
+    "backtest": "node src/cli.js backtest",
+    "validate": "node src/cli.js validate",
+    "download": "node src/cli.js download"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
