@@ -1,0 +1,2 @@
+export function windows(data, train=0.6, test=0.2, step=0.2){const out=[]; for(let s=0;s+train+test<=1.000001;s+=step){const a=Math.floor(data.length*s), b=Math.floor(data.length*(s+train)), c=Math.floor(data.length*(s+train+test)); out.push({train:data.slice(a,b),test:data.slice(b,c),start:a,end:c});} return out;}
+export function sensitivity(base, grid){return grid.map(x=>({...x,params:{...base,...x}}));}
