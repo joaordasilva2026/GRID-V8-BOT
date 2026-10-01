@@ -1,0 +1,2 @@
+export function shock(candles, pct){return candles.map(c=>({...c,open:c.open*(1+pct),high:c.high*(1+pct),low:c.low*(1+pct),close:c.close*(1+pct)}));}
+export function spreadStress(cfg, bps){return {...cfg,spreadBps:cfg.spreadBps+bps,slippageBps:cfg.slippageBps+bps};}
