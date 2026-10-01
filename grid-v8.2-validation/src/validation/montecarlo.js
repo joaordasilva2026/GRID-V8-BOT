@@ -1,0 +1,4 @@
+export function monteCarlo(trades, runs=1000){const r=trades.map(t=>t.netPct/100); if(!r.length)return {runs,median:0,p05:0,p95:0}; const finals=[];
+  for(let k=0;k<runs;k++){let eq=1; for(let i=0;i<r.length;i++) eq*=1+r[Math.floor(Math.random()*r.length)]; finals.push(eq-1);}
+  finals.sort((a,b)=>a-b); const pct=p=>finals[Math.floor((finals.length-1)*p)]; return {runs,median:pct(.5)*100,p05:pct(.05)*100,p95:pct(.95)*100};
+}
